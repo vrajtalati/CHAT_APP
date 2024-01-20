@@ -37,7 +37,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-// --------------------------deployment------------------------------
+// -------deployment-------------
 
 // Error Handling middlewares
 app.use(notFound);

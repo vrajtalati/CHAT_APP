@@ -39,8 +39,9 @@ const Signup = () => {
         status: "warning",
         duration: 5000,
         isClosable: true,
-        position: "bottom",
+        position: "top",
       });
+      setPicLoading(false);
       return;
     }
     console.log(name, email, password, pic);
@@ -81,6 +82,7 @@ const Signup = () => {
         position: "bottom",
       });
       setPicLoading(false);
+      console.log(error);
     }
   };
 

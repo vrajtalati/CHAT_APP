@@ -76,8 +76,10 @@ function SideDrawer() {
           Authorization: `Bearer ${user.token}`,
         },
       };
+      // console.log(config)
 
       const { data } = await axios.get(`/api/user?search=${search}`, config);
+      console.log(`search is ${search}`);
 
       setLoading(false);
       setSearchResult(data);
@@ -121,6 +123,8 @@ function SideDrawer() {
       });
     }
   };
+  // console.log(searchResult);
+
 
   return (
     <>
@@ -134,14 +138,14 @@ function SideDrawer() {
         borderWidth="5px"
       >
         <Tooltip label="Search Users to chat" hasArrow placement="bottom-end">
-          <Button variant="ghost" onClick={onOpen}>
+          <Button colorScheme='blue' variant="outline" px={0} mx={10} onClick={onOpen}>
             <i className="fas fa-search"></i>
             <Text d={{ base: "none", md: "flex" }} px={4}>
-              Search User
+              Search User Here
             </Text>
           </Button>
         </Tooltip>
-        <Text fontSize="2xl" fontFamily="Work sans">
+        <Text  boxShadow='outline' align={"center"} fontSize="4xl" mx={500} fontFamily="Work sans">
           Talk-A-Tive
         </Text>
         <div>
@@ -204,11 +208,13 @@ function SideDrawer() {
               />
               <Button onClick={handleSearch}>Go</Button>
             </Box>
+             
             {loading ? (
               <ChatLoading />
             ) : (
               searchResult?.map((user) => (
                 <UserListItem
+                  
                   key={user._id}
                   user={user}
                   handleFunction={() => accessChat(user._id)}
