@@ -46,14 +46,17 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
+      
       };
+      // console.log(user);
 
       setLoading(true);
 
-      const { data } = await axios.get(
+      const {data} = await axios.get(
         `/api/message/${selectedChat._id}`,
         config
       );
+      console.log(selectedChat._id);
       setMessages(data);
       setLoading(false);
 
@@ -92,6 +95,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         socket.emit("new message", data);
         setMessages([...messages, data]);
       } catch (error) {
+        console.log(error);
         toast({
           title: "Error Occured!",
           description: "Failed to send the Message",
@@ -99,6 +103,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
           duration: 5000,
           isClosable: true,
           position: "bottom",
+          
         });
       }
     }

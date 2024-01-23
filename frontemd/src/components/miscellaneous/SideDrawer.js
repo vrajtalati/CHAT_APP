@@ -136,6 +136,7 @@ function SideDrawer() {
         w="100%"
         p="5px 10px 5px 10px"
         borderWidth="5px"
+        
       >
         <Tooltip label="Search Users to chat" hasArrow placement="bottom-end">
           <Button colorScheme='blue' variant="outline" px={0} mx={10} onClick={onOpen}>
