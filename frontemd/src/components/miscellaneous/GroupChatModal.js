@@ -157,11 +157,11 @@ const GroupChatModal = ({ children }) => {
               />
             </FormControl>
             <Box w="100%" d="flex" flexWrap="wrap">
-              {selectedUsers.map((u) => (
+              {selectedUsers.map((user) => (
                 <UserBadgeItem
-                  key={u._id}
-                  user={u}
-                  handleFunction={() => handleDelete(u)}
+                  key={user._id}
+                  user={user}
+                  handleFunction={() => handleDelete(user)}
                 />
               ))}
             </Box>
@@ -170,7 +170,7 @@ const GroupChatModal = ({ children }) => {
               <div>Loading...</div>
             ) : (
               searchResult
-                ?.slice(0, 4)
+                ?.slice(0, 3)
                 .map((user) => (
                   <UserListItem
                     key={user._id}
