@@ -1,9 +1,11 @@
 {
   "name": "talk-a-tive",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon backend/server.js"
+    "start":"node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "build": "npm install && npm install --prefix frontemd && npm run build npm run build --prefix frontemd"
   },
   "repository": {
     "type": "git",
