@@ -13,7 +13,7 @@ const Chatpage = () => {
   return (
     <div style={{ width: "100%"  }}>
       {user && <SideDrawer />}
-      <Box display="flex"  w="100%" h="90.5vh" p="10px">
+      <Box display="flex"  w="100%" h="100vh" p="10px">
        {/* <Box flexDirection="row"> */}
         {user && <MyChats fetchAgain={fetchAgain} />}
         {/* </Box> */}
@@ -23,6 +23,7 @@ const Chatpage = () => {
           <Chatbox fetchAgain={fetchAgain} setFetchAgain={setFetchAgain} />
           
         }
+
         {/* </Box> */}
        
       </Box>

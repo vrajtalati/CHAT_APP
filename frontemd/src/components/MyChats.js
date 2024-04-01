@@ -77,6 +77,7 @@ const MyChats = ({ fetchAgain }) => {
           </Button>
         </GroupChatModal>
       </Box>
+      
       <Box
         d="flex"
         flexDir="column"

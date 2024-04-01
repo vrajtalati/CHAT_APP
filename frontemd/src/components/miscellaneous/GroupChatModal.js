@@ -14,7 +14,7 @@ import {
   Box,
 } from "@chakra-ui/react";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ChatState } from "../../Context/ChatProvider";
 import UserBadgeItem from "../userAvatar/UserBadgeItem";
 import UserListItem from "../userAvatar/UserListItem";
@@ -27,7 +27,7 @@ const GroupChatModal = ({ children }) => {
   const [searchResult, setSearchResult] = useState([]);
   const [loading, setLoading] = useState(false);
   const toast = useToast();
-
+  // function handleSearch(){}
   const { user, chats, setChats } = ChatState();
 
   const handleGroup = (userToAdd) => {
@@ -44,6 +44,38 @@ const GroupChatModal = ({ children }) => {
 
     setSelectedUsers([...selectedUsers, userToAdd]);
   };
+  // useEffect(()=>{
+
+  //   const  handleSearch = async (query) => {
+  //     setSearch(query);
+  //     if (!query) {
+  //       return;
+  //     }
+  
+  //     try {
+  //       setLoading(true);
+  //       const config = {
+  //         headers: {
+  //           Authorization: `Bearer ${user.token}`,
+  //         },
+  //       };
+  //       const { data } = await axios.get(`/api/user?search=${search}`, config);
+  //       console.log(data);
+  //       setLoading(false);
+  //       setSearchResult(data);
+  //     } catch (error) {
+  //       toast({
+  //         title: "Error Occured!",
+  //         description: "Failed to Load the Search Results",
+  //         status: "error",
+  //         duration: 5000,
+  //         isClosable: true,
+  //         position: "bottom-left",
+  //       });
+  //     }
+  //   };
+  // },[])
+
 
   const handleSearch = async (query) => {
     setSearch(query);
@@ -151,7 +183,7 @@ const GroupChatModal = ({ children }) => {
             </FormControl>
             <FormControl>
               <Input
-                placeholder="Add Users eg: John, Piyush, Jane"
+                placeholder="Add Users eg: Vraj,Rishav"
                 mb={1}
                 onChange={(e) => handleSearch(e.target.value)}
               />
