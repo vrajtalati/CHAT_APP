@@ -5,7 +5,7 @@
   "scripts": {
     "start":"node backend/server.js",
     "server": "nodemon backend/server.js",
-    "build": "npm install && npm install --prefix frontemd && npm run build npm run build --prefix frontemd"
+    "build": "npm install --legacy-peer-deps && npm install --legacy-peer-deps --prefix frontemd && npm run build npm run build --prefix frontemd"
   },
   "repository": {
     "type": "git",
