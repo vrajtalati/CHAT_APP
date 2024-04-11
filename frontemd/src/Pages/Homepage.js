@@ -7,6 +7,7 @@ import {
   TabPanels,
   Tabs,
   Text,
+  Flex
 } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useHistory } from "react-router";
@@ -34,9 +35,10 @@ function Homepage() {
         borderRadius="lg"
         borderWidth="1px"
       >
-        <Text  fontSize="4xl" fontFamily="Work sans">
+        <Flex  fontSize="4xl"  d={Flex}
+        justifyContent="center"  alignItems="center"   fontFamily="Work sans">
           Talk-A-Tive
-        </Text>
+        </Flex>
       </Box>
       <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
         <Tabs isFitted variant="soft-rounded">

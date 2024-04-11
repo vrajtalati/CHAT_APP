@@ -84,6 +84,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
           },
         };
         setNewMessage("");
+       
         const { data } = await axios.post(
           "/api/message",
           {
@@ -95,6 +96,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         socket.emit("new message", data);
         setMessages([...messages, data]);
       } catch (error) {
+        console.log();
         console.log(error);
         toast({
           title: "Error Occured!",
@@ -210,7 +212,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             w="100%"
             h="100%"
             borderRadius="lg"
-            overflowY="hidden"
+            overflowY="auto"
           >
             {loading ? (
               <Spinner
@@ -256,7 +258,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         </>
       ) : (
         // to get socket.io on same page
-        <Box d="flex" alignItems="center" justifyContent="center" h="100%">
+        <Box overflowY="scroll" d="flex" alignItems="center" justifyContent="center" h="100%">
           <Text fontSize="3xl" pb={3} fontFamily="Work sans">
             Click on a user to start chatting
           </Text>

@@ -1,7 +1,7 @@
 import { Button } from "@chakra-ui/button";
 import { useDisclosure } from "@chakra-ui/hooks";
 import { Input } from "@chakra-ui/input";
-import { Box, Text } from "@chakra-ui/layout";
+import { Box, Text,Flex} from "@chakra-ui/layout";
 import {
   Menu,
   MenuButton,
@@ -140,17 +140,19 @@ function SideDrawer() {
         borderWidth="5px"
         
       >
+        <div style={{display:"flex", justifyContent:"space-between"}}>
         <Tooltip label="Search Users to chat" hasArrow placement="bottom-end">
-          <Button colorScheme='blue' variant="outline" px={0} mx={10} onClick={onOpen}>
+          <Button colorScheme='blue' w="30%" variant="outline" px={9} py={5} mx={10} onClick={onOpen}>
             <i className="fas fa-search"></i>
-            <Text d={{ base: "none", md: "flex" }} px={4}>
+            <Flex  fontSize="xl" d={{ base: "none", md: "flex" }} px={4}>
               Search User Here
-            </Text>
+            </Flex>
           </Button>
         </Tooltip>
-        <Text  boxShadow='outline' align={"center"} fontSize="4xl" mx={500} fontFamily="Work sans">
+        <Flex colorScheme='blue' boxShadow='outline'  w="40%" mx="30%" mt="3"  justifyContent={"center"} fontSize="4xl" fontFamily="Work sans">
           Talk-A-Tive
-        </Text>
+        </Flex>
+        </div>
         <div>
           <Menu>
             <MenuButton p={1}>
