@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start":"node backend/server.js",
+    "start": "node backend/server.js",
     "server": "nodemon backend/server.js",
     "build": "npm install --legacy-peer-deps && npm install --legacy-peer-deps --prefix frontemd && npm run build npm run build --prefix frontemd"
   },
@@ -17,6 +17,7 @@
     "@chakra-ui/react": "^2.8.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "axios": "^0.21.4",
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
     "cors": "^2.8.5",
@@ -25,10 +26,11 @@
     "express": "^4.18.2",
     "express-async-handler": "^1.2.0",
     "framer-motion": "^10.16.4",
+    "ioredis": "^5.4.1",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^7.6.3",
+    "mongoose": "^5.12.9",
     "nodemon": "^3.0.1",
-    "socket.io": "^4.7.2"
+    "socket.io": "^4.1.2"
   },
   "description": ""
 }

@@ -72,14 +72,15 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
       });
     }
   };
-
+ 
   const sendMessage = async (event) => {
     if (event.key === "Enter" && newMessage) {
       socket.emit("stop typing", selectedChat._id);
+     
       try {
         const config = {
           headers: {
-            "Content-type": "application/json",
+            // "Content-type": "application/json",
             Authorization: `Bearer ${user.token}`,
           },
         };
@@ -93,10 +94,12 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
           },
           config
         );
+        console.log("message recieved")
         socket.emit("new message", data);
+
         setMessages([...messages, data]);
       } catch (error) {
-        console.log();
+        
         console.log(error);
         toast({
           title: "Error Occured!",
@@ -112,6 +115,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
   };
 
   useEffect(() => {
+   
     socket = io(ENDPOINT);
     socket.emit("setup", user);
     socket.on("connected", () => setSocketConnected(true));
